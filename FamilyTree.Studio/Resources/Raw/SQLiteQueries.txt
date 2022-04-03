@@ -1,0 +1,115 @@
+﻿CREATE TABLE Person (
+    Id              INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    Valid           BOOL,
+    Alias           TEXT,
+    BirthDate       DATE,
+    DeathDate       DATE,
+    Mother          INTEGER,
+    Father          INTEGER,
+    Names           TEXT,
+    Telephones      TEXT,
+    Addresses       TEXT,
+    Emails          TEXT,
+    AdoptiveParents TEXT,
+    Relationships   TEXT,
+    Occupations     TEXT,
+    Notes           TEXT
+);
+
+CREATE TABLE Name (
+    Id          INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    Valid       BOOL,
+    FirstName   TEXT,
+    LastName    TEXT,
+    MiddleNames TEXT,
+    Alias       TEXT,
+    [From]      DATE,
+    [To]        DATE
+);
+
+CREATE TABLE Telephone (
+    Id          INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    Valid       BOOL,
+    Type        INTEGER,
+    Number      TEXT,
+    [From]      DATE,
+    [To]        DATE
+);
+
+CREATE TABLE Address (
+    Id          INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    Valid       BOOL,
+    Region      INTEGER,
+    Street      TEXT,
+    Number      TEXT,
+    [From]      DATE,
+    [To]        DATE
+);
+
+CREATE TABLE Email (
+    Id          INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    Valid       BOOL,
+    Address     TEXT,
+    [From]      DATE,
+    [To]        DATE
+);
+
+CREATE TABLE AdoptiveParent (
+    Id          INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    Valid       BOOL,
+    Type        INTEGER,
+    Person      INTEGER,
+    [From]      DATE,
+    [To]        DATE
+);
+
+CREATE TABLE Relationship (
+    Id          INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    Valid       BOOL,
+    Type        INTEGER,
+    Persons     TEXT,
+    [From]      DATE,
+    [To]        DATE
+);
+
+CREATE TABLE Occupation (
+    Id          INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    Valid       BOOL,
+    Name        TEXT,
+    Region      INTEGER,
+    [From]      DATE,
+    [To]        DATE
+);
+
+CREATE TABLE TelephoneType (
+    Id          INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    Valid       BOOL,
+    Name        TEXT
+);
+
+CREATE TABLE Region (
+    Id          INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    Valid       BOOL,
+    Name        TEXT,
+    PostCode    TEXT,
+    Parent      INTEGER,
+    Country     INTEGER
+);
+
+CREATE TABLE AdoptiveParentType (
+    Id          INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    Valid       BOOL,
+    Name        TEXT
+);
+
+CREATE TABLE RelationshipType (
+    Id          INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    Valid       BOOL,
+    Name        TEXT
+);
+
+CREATE TABLE Country (
+    Id          INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    Valid       BOOL,
+    Name        TEXT
+);

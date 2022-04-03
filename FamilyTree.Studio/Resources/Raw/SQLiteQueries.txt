@@ -113,3 +113,9 @@ CREATE TABLE Country (
     Valid       BOOL,
     Name        TEXT
 );
+
+CREATE TABLE Foo (
+    Id          INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    Name        TEXT,
+    Age         INTEGER
+);
